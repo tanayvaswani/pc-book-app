@@ -33,13 +33,28 @@ func randomCPUBrand() string {
 	return randomStringFromSet("Intel", "AMD")
 }
 
-func randomName(brand string) string {
+func randomCPUName(brand string) string {
 	if brand == "Intel" {
 		return randomStringFromSet("i3", "i5", "i7", "i9")
 	}
 	return randomStringFromSet("Ryzen3", "Ryzen5", "Ryzen7", "Ryzen9")
 }
 
-func getRandomNumber(min, max int) int {
+func getRandomNumber(min int, max int) int {
 	return rand.Intn(max - min + 1) + min
 }
+
+func getRandomFloat(min float64, max float64) float64 {
+	return rand.Float64() * (max - min) + min
+}
+
+func randomGPUBrand() string {
+	return randomStringFromSet("NVIDIA", "AMD")
+}
+
+func randomGPUName(brand string) string {
+	if brand == "NVIDIA" {
+		return randomStringFromSet("RTX 2060", "RTX 2070", "GTX 1660-Ti", "GTX 1070")
+	}
+	return randomStringFromSet("RX 590", "RX 580", "RX 5700-XT")
+} 
